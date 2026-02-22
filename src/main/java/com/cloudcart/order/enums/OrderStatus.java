@@ -1,9 +1,7 @@
 package com.cloudcart.order.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor
 @Getter
 public enum OrderStatus {
 
@@ -14,6 +12,9 @@ public enum OrderStatus {
     IN_PROCESS("IN_PROCESS"),
     DELIVERED("DELIVERED");
 
-    private final String orderStatus;
+    public final String orderStatus;
 
+    OrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
 }

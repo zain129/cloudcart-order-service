@@ -28,6 +28,6 @@ public class Order {
     public Order() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        this.status = OrderStatus.CREATED.getOrderStatus();
+        this.status = OrderStatus.CREATED.name();
     }
 }
