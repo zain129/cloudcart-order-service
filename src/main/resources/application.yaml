@@ -1,3 +1,31 @@
+server:
+  port: 9091
+
 spring:
   application:
     name: CloudCart Order Service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mailmorpher
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+      type:
+        descriptor:
+          sql: TRACE
+
+
+jwt:
+  secret: yN4tx4sVXgWnQm+y7FiKV9hqqnhQ8vLOzMN2HT9pTKQ=
+
