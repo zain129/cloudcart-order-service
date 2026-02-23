@@ -5,9 +5,9 @@ spring:
   application:
     name: CloudCart Order Service
   datasource:
-    url: jdbc:postgresql://localhost:5432/mailmorpher
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost:5432/cloudcart_order_db
+    username: cloudcart_user
+    password: cart_user_123
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
