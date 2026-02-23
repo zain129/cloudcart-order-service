@@ -2,6 +2,7 @@ package com.cloudcart.order.service;
 
 import com.cloudcart.order.domain.Order;
 import com.cloudcart.order.dto.OrderRequest;
+import com.cloudcart.order.enums.OrderStatus;
 import com.cloudcart.order.repository.OrderRepository;
 import com.cloudcart.order.service.impl.OrderServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +30,7 @@ class OrderServiceImplTest {
 
         Order savedOrder = new Order();
         savedOrder.setCustomerId("cust123");
-        savedOrder.setStatus("CREATED");
+//        savedOrder.setStatus(OrderStatus.CREATED);
         savedOrder.setId(1L);
 
         when(orderRepository.save(any(Order.class))).thenReturn(savedOrder);
@@ -38,7 +39,7 @@ class OrderServiceImplTest {
 
         assertNotNull(result);
         assertEquals("cust123", result.getCustomerId());
-        assertEquals("CREATED", result.getStatus());
+        assertEquals(OrderStatus.CREATED, result.getStatus());
 
         verify(orderRepository, times(1)).save(any(Order.class));
     }

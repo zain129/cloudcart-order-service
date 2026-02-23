@@ -19,7 +19,9 @@ public class Order {
 
     private String customerId;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private OrderStatus status;
 
     private LocalDateTime createdAt;
 
@@ -28,6 +30,6 @@ public class Order {
     public Order() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        this.status = OrderStatus.CREATED.name();
+        this.status = OrderStatus.CREATED;
     }
 }
