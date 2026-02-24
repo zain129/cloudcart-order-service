@@ -1,4 +1,4 @@
-package com.cloudcart.order;
+package com.cloudcart.order.testcontainers;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -8,12 +8,15 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
+public class TestcontainersConfiguration {
 
 	@Bean
 	@ServiceConnection
 	KafkaContainer kafkaContainer() {
-		return new KafkaContainer(DockerImageName.parse("apache/kafka-native:latest"));
+		return new KafkaContainer(
+				DockerImageName.parse("apache/kafka-native:latest")
+//				DockerImageName.parse("confluentinc/cp-kafka:7.5.0 ")
+		);
 	}
 
 	@Bean
