@@ -1,4 +1,4 @@
-package com.cloudcart.order;
+package com.cloudcart.order.testcontainers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

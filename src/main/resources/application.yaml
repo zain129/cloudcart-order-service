@@ -15,6 +15,21 @@ spring:
     show-sql: true
     open-in-view: false
 
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+        spring.json.value.default.type: com.cloudcart.order.event.OrderCreatedEvent
+    consumer:
+      group-id: order-group
+      auto-offset-reset: earliest
+
+  testcontainers:
+    enabled: false
+
 
 logging:
   level:
@@ -24,6 +39,7 @@ logging:
       type:
         descriptor:
           sql: TRACE
+    org.apache.kafka: DEBUG
 
 
 jwt:
