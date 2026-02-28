@@ -19,6 +19,10 @@ public class Order {
 
     private String customerId;
 
+    private Long productId;
+
+    private Integer quantity;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderStatus status;

@@ -1,8 +1,13 @@
 package com.cloudcart.order.dto;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class OrderRequest {
     private String customerId;
-
-    public String getCustomerId() { return customerId; }
-    public void setCustomerId(String customerId) { this.customerId = customerId; }
+    private Long productId;
+    private Integer quantity;
 }
