@@ -24,6 +24,8 @@ public class OrderController {
         OrderResponse response = new OrderResponse(
                 order.getId(),
                 order.getCustomerId(),
+                order.getProductId(),
+                order.getQuantity(),
                 order.getStatus(),
                 order.getCreatedAt()
         );

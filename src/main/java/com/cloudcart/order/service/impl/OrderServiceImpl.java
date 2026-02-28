@@ -27,6 +27,8 @@ public class OrderServiceImpl implements OrderService {
 
         Order order = new Order();
         order.setCustomerId(request.getCustomerId());
+        order.setProductId(request.getProductId());
+        order.setQuantity(request.getQuantity());
         order.setStatus(OrderStatus.CREATED);
 
         Order savedOrder = orderRepository.save(order);
@@ -34,6 +36,8 @@ public class OrderServiceImpl implements OrderService {
         OrderCreatedEvent event = OrderCreatedEvent.builder()
                 .orderId(savedOrder.getId())
                 .customerId(savedOrder.getCustomerId())
+                .productId(savedOrder.getProductId())
+                .quantity(savedOrder.getQuantity())
                 .status(savedOrder.getStatus())
                 .createdAt(savedOrder.getCreatedAt())
                 .build();

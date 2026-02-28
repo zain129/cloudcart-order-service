@@ -17,6 +17,8 @@ public class OrderCreatedEvent implements Serializable {
 
     private Long orderId;
     private String customerId;
+    private Long productId;
+    private Integer quantity;
     private OrderStatus status;
     private LocalDateTime createdAt;
 }
